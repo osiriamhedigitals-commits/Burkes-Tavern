@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burke's Tavern - New American Restaurant Newark NJ</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica',sans-serif}
+    body{background:#0a0a0a;color:#fff}
+    .gold{color:#D4AF37}
+    .btn{background:#D4AF37;color:#000;padding:14px 28px;border-radius:50px;font-weight:bold;text-decoration:none;display:inline-block}
+    
+    /* HERO */
+    .hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+    .hero h1{font-size:5rem;font-weight:900}
+    
+    /* MENU GRID */
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;padding:60px 5%}
+    .menu-card{background:#111;border-radius:16px;overflow:hidden}
+    .menu-card img{width:100%;height:250px;object-fit:cover}
+    .menu-card div{padding:16px}
+    
+    /* FLOATING BUTTON - ONLY ON HOME */
+    .floating-btn{position:fixed;bottom:24px;right:24px;z-index:999;box-shadow:0 10px 30px rgba(212,175,55,0.4)}
+    .floating-btn:hover{transform:scale(1.1)}
+    
+    section{padding:80px 5%}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: HOME -->
+  <section id="home">
+    <div class="hero">
+      <video src="images/intro-burkes.mp4" autoplay muted loop playsinline></video>
+      <div>
+        <h1>Burke's <span class="gold">Tavern</span></h1>
+        <p style="font-size:1.5rem;margin:20px 0">New American. Historic Newark.</p>
+        <a href="#menu" class="btn">View Menu</a>
+      </div>
+    </div>
+
+    <!-- ABOUT 3000 WORDS -->
+    <div style="max-width:900px;margin:0 auto">
+      <h2 class="gold" style="font-size:2.5rem;margin-bottom:20px">Our Story</h2>
+      <p style="line-height:1.8;font-size:1.1rem">
+        Est. in the heart of Newark... [I will write 3000 words premium history here for you]
+        150 Lafayette St. European-inspired. Candlelight. 4.7 Stars.
+      </p>
+    </div>
+
+    <!-- FLOATING BOOK NOW BUTTON -->
+    <a href="#reservations" class="btn floating-btn">Book Now</a>
+  </section>
+
+  <!-- PAGE 2: MENU -->
+  <section id="menu" class="hidden">
+    <h2 class="gold" style="text-align:center;font-size:3rem">Menu</h2>
+    <div class="menu-grid" id="menuGrid">
+      <!-- JS will auto-fill menu-01 to menu-50 here -->
+    </div>
+    <div style="text-align:center"><a href="#home" class="btn">Back Home</a></div>
+  </section>
+
+  <!-- PAGE 5: RESERVATIONS -->
+  <section id="reservations" class="hidden">
+    <h2 class="gold" style="text-align:center;font-size:3rem">Reservations</h2>
+    <p style="text-align:center">150 Lafayette St, Newark, NJ 07105 | +1 973-433-9883</p>
+    <!-- Booking form goes here -->
+  </section>
+
+<script>
+  // SIMPLE PAGE SWITCHER
+  const sections = document.querySelectorAll('section');
+  function showPage(id){
+    sections.forEach(s => s.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+  }
+  window.addEventListener('hashchange', () => showPage(location.hash.slice(1) || 'home'));
+  showPage('home');
+
+  // AUTO LOAD MENU 01 TO 50
+  const menuGrid = document.getElementById('menuGrid');
+  const menuData = {
+    1: {name:"Bangkok-Fry Shrimp", price:"$17.00", desc:"Chilies, lime, honey, crispy shallots"},
+    2: {name:"Moroccan Lamb Meatballs", price:"$20.00", desc:"Tomato, grilled bread, yoghurt, mint"},
+    3: {name:"Tomato Pie Pizza", price:"$18.00", desc:"Classic Newark style"},
+    // ... add up to 50. If image missing it just won't show
+  };
+  
+  for(let i=1; i<=50; i++){
+    const id = String(i).padStart(2,'0');
+    const data = menuData[i] || {name:`Dish ${i}`, price:"$20.00", desc:"Delicious"};
+    menuGrid.innerHTML += `
+      <div class="menu-card">
+        <img src="images/menu-${id}.webp" onerror="this.style.display='none'">
+        <div>
+          <h3 class="gold">${data.name}</h3>
+          <p>${data.desc}</p>
+          <p style="font-weight:bold;margin-top:8px">${data.price}</p>
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
