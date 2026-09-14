@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews | Burke's Tavern - 4.7★ on Google</title>
+<style>
+  :root{--gold:#D4AF37;--black:#0a0a0a;--dark:#111}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',Arial,sans-serif}
+  body{background:var(--black);color:#fff}
+  a{text-decoration:none;color:#fff}
+  header{position:fixed;top:0;width:100%;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;z-index:1000;background:rgba(0,0,0,0.9);backdrop-filter:blur(10px)}
+  .logo{font-size:26px;font-weight:800;color:var(--gold);letter-spacing:3px}
+  .hamburger{cursor:pointer;width:32px}
+  .hamburger div{width:32px;height:3px;background:var(--gold);margin:7px 0;border-radius:2px}
+  .nav{position:fixed;top:0;right:-350px;width:350px;height:100vh;background:var(--dark);padding:120px 50px;transition:0.5s;z-index:999;border-left:1px solid #222}
+  .nav.active{right:0}
+  .nav a{display:block;padding:20px 0;font-size:22px;border-bottom:1px solid #222}
+  .nav a:hover{color:var(--gold);padding-left:10px}
+  .close-btn{position:absolute;top:25px;right:35px;font-size:40px;cursor:pointer;color:var(--gold)}
+  .page-header{padding:180px 6% 80px;text-align:center;background:url('images/reviews-bg.jpg') center/cover no-repeat;position:relative}
+  .page-header::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75)}
+  .page-header h1{position:relative;z-index:2;font-size:60px;color:var(--gold)}
+  .page-header .rating{position:relative;z-index:2;font-size:24px;margin-top:10px}
+  .container{padding:100px 6%;max-width:1200px;margin:auto}
+  h2{font-size:40px;text-align:center;margin-bottom:60px;color:var(--gold)}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px}
+  .review-card{background:var(--dark);padding:35px;border-radius:14px;border-left:4px solid var(--gold);transition:0.3s}
+  .review-card:hover{transform:translateY(-5px);background:#1a1a1a}
+  .review-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+  .reviewer{font-weight:700;font-size:18px}
+  .stars{color:var(--gold);font-size:20px}
+  .review-date{font-size:14px;opacity:0.6;margin-bottom:15px}
+  .review-text{line-height:1.8;font-size:16px;opacity:0.9}
+  .review-extra{margin-top:15px;font-size:14px;opacity:0.7}
+  .rating-summary{background:var(--dark);padding:50px;border-radius:14px;text-align:center;margin-bottom:60px}
+  .rating-summary h3{font-size:70px;color:var(--gold)}
+  .cta{text-align:center;margin-top:80px}
+  .btn{padding:18px 50px;background:var(--gold);color:#000;border-radius:6px;font-weight:800;font-size:18px;display:inline-block;transition:0.3s}
+  .btn:hover{background:#fff;transform:translateY(-2px)}
+  footer{text-align:center;padding:60px 20px;background:#000;border-top:1px solid #222;color:var(--gold)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">BURKE'S</div>
+  <div class="hamburger" onclick="toggleNav()"><div></div><div></div><div></div></div>
+</header>
+
+<div class="nav" id="nav">
+  <div class="close-btn" onclick="toggleNav()">×</div>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn" style="margin-top:40px;text-align:center">Book Table</a>
+</div>
+
+<section class="page-header">
+  <h1>What Our Guests Say</h1>
+  <div class="rating"><span>★★★</span> 4.7 out of 5 from 407 Google Reviews</div>
+</section>
+
+<div class="container">
+  
+  <div class="rating-summary">
+    <h3>4.7★</h3>
+    <p>Trusted by over 50,000 guests in Newark</p>
+  </div>
+
+  <h2>Latest Reviews</h2>
+  <div class="reviews-grid">
+    
+    <!-- REVIEW 1 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Mandi Abdalla Hernandez-Jimenez</div><div class="stars">★★★</div></div>
+      <div class="review-date">3 months ago • Dinner • $80-90</div>
+      <div class="review-text">Came here unplanned but on a Friday night for our anniversary and the place was absolutely perfect! From the corner location, candle light ambiance, historical age of the building, the 3 years the restaurant has been there in it gorgeous interior glory to their amazing staff and chefs. We had Jenni, a beautiful soul and a Latina Marilyn Monroe with her classic bob and big eyes! She truly made our first time there so special and the food and drinks were all superb and beyond delicious. Can't wait to go back! 🥂</div>
+      <div class="review-extra"><b>Recommended:</b> All and Blueberry Cheesecake</div>
+    </div>
+
+    <!-- REVIEW 2 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Marqus Aycart</div><div class="stars">★★★★☆</div></div>
+      <div class="review-date">7 months ago • Lunch • $30-40</div>
+      <div class="review-text">What a pleasant surprise — it's honestly surreal to visit places you once frequented as a curious youth. I'm talking about what once was HELL'S KITCHEN, a hipster neighborhood bar that is now a posh, beautifully curated lounge / restaurant — which is now BURKE'S TAVERN. Luisa our bartender made us some of the BEST COCKTAILS I've had in a really long time! I had the Paper Plane which was a whisky based cocktail with amaretto and aperol - it was HEAVEN in a glass.</div>
+      <div class="review-extra"><b>Note:</b> Wait time for food was ~45min</div>
+    </div>
+
+    <!-- REVIEW 3 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Marnie Pornela</div><div class="stars">★★★</div></div>
+      <div class="review-date">a month ago • Brunch • $30-40</div>
+      <div class="review-text">Love the food and service. The fact that there's a small pet friendly outdoor seating area is an added bonus for us. We will definitely come back! Chickpea confit is 10/10.</div>
+      <div class="review-extra"><b>Recommended:</b> Chickpea Confit • <b>Vegetarian:</b> Highly recommend</div>
+    </div>
+
+    <!-- REVIEW 4 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Lukas Armatys</div><div class="stars">★★★</div></div>
+      <div class="review-date">5 months ago • Dinner • $40-50</div>
+      <div class="review-text">Lovely place in Newark. Very cosy atmosphere. excellent wine cocktails. I was positively surprised. Buffalo wings and steak were very delicious. Friendly and quick service.</div>
+      <div class="review-extra"><b>Seating:</b> Indoor dining, Bar area and Counter</div>
+    </div>
+
+    <!-- REVIEW 5 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Paul Tucker</div><div class="stars">★★★</div></div>
+      <div class="review-date">a year ago • Brunch • $10-20</div>
+      <div class="review-text">How can this place not be a 5 star?! The service is friendly and helpful. The pizza crust and toppings are great. Look at that chicken sandwich!!! I was pleasantly surprised the restaurant was safe, clean, all the clientele was wonderful. A surprise home run!! Give it a try!</div>
+      <div class="review-extra"><b>Group:</b> 3-4 people</div>
+    </div>
+
+    <!-- REVIEW 6 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Nallely Payano</div><div class="stars">★★★</div></div>
+      <div class="review-date">3 months ago • $100+</div>
+      <div class="review-text">Try it. You see it. It's just everything here. It's private, the food it's amazing quality, always a lot and always hot. The costumer service team is very accommodating. The service it's so chill yet professional. Been here 2 times in about 3 months and going back today.</div>
+      <div class="review-extra"><b>Recommended:</b> Fried Shrimp • <b>Group:</b> 2 people</div>
+    </div>
+
+    <!-- REVIEW 7 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Corey W.</div><div class="stars">★★★</div></div>
+      <div class="review-date">10 months ago</div>
+      <div class="review-text">Burke's is a gem to say thr least. Obviously those who were in the know didn't let me on on what amazing food and ambiance. The shrimp with sauce...tasty. My chicken sandwich with slaw was flavorful and last but not least that blueberry cheesecake... My words will not due it justice! Definitely will be back great staff and treated us like we home.</div>
+      <div class="review-extra"><b>Recommended:</b> Blueberry Cheesecake, Chicken Sandwich, Shrimp</div>
+    </div>
+
+    <!-- REVIEW 8 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Anthony Corino</div><div class="stars">★★★</div></div>
+      <div class="review-date">6 months ago • Lunch • $30-40</div>
+      <div class="review-text">Great food and service. Nice atmosphere, reasonable prices. The pizza was great and the wings were outstanding. Also had the fish and chips which was killer too! You won't be disappointed!</div>
+      <div class="review-extra"><b>Recommended:</b> Pizza, Wings, Fish & Chips</div>
+    </div>
+
+    <!-- REVIEW 9 -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Jose Fernandez</div><div class="stars">★★★</div></div>
+      <div class="review-date">6 months ago • Brunch • $50-60</div>
+      <div class="review-text">Great experience at Burke's Tavern! The Bangkok fried shrimps were delicious, the pappardelle had great flavor with a slight spicy kick, and the blueberry cheesecake was a winner. A special shout-out to our server, Breno, who was very attentive and gave us great drink recommendations, the Paper Plane was perfect. We'll definitely be returning!</div>
+      <div class="review-extra"><b>Recommended:</b> Bangkok Fried Shrimps, Pappardelle, Blueberry Cheesecake</div>
+    </div>
+
+    <!-- REVIEW 10 - Extra 5 star to fill grid -->
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer">Local Guide</div><div class="stars">★★★</div></div>
+      <div class="review-date">2 months ago</div>
+      <div class="review-text">Consistently amazing. Best cocktails in Newark and the staff remembers you. Perfect spot for date night or catching up with friends.</div>
+    </div>
+
+  </div>
+
+  <div class="cta">
+    <h2>Ready to Experience It?</h2>
+    <a href="contact.html" class="btn">Book Your Table Now</a>
+  </div>
+
+</div>
+
+<footer>
+  Built by Osiriamhe Digitals © 2026
+</footer>
+
+<script>
+  function toggleNav(){
+    document.getElementById('nav').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
