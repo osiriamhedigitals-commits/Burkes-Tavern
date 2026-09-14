@@ -200,61 +200,33 @@
   </div>
   </section>
   
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+body { overflow-x: hidden; }
 
-body {
-  overflow-x: hidden; /* STOPS LEFT-RIGHT SCROLL */
-}
-
-/* GRID FOR MENU */
+/* THIS MAKES IT ONE BY ONE - NO DIVIDING */
 .menu-grid, .highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
-  gap: 20px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column; /* ONE BY ONE */
+  gap: 15px;
+  width: 100%;
 }
 
-/* THIS IS THE FIX FOR ZOOM */
 .menu-item, .highlight-item {
-  background: #fff;
+  width: 100%; /* FULL WIDTH, NO EXPAND */
+}
+
+.menu-item img, .highlight-item img {
+  width: 100%;
+  height: 240px; /* ALL SAME HEIGHT */
+  object-fit: cover; /* NO ZOOM, NO STRETCH */
   border-radius: 12px;
-  overflow: hidden;
-}
-
-.img-box {
-  width: 100%;
-  height: 220px; /* DESKTOP HEIGHT */
-  overflow: hidden;
-}
-
-.img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* STOPS ZOOM + STRETCH */
   display: block;
 }
 
-.menu-item h3, .highlight-item h3 {
-  padding: 10px;
-  text-align: center;
-}
-
-/* PHONE FIX */
-@media (max-width: 768px) {
-  .menu-grid, .highlights-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on phone */
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  .img-box {
-    height: 160px; /* PHONE HEIGHT */
-  }
+/* THIS FIXES YOUR STARTER + NEW PRICE */
+.starter-section, .new-price-section {
+  width: 100%;
+  overflow: hidden;
 }
 </style>
   
